@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='ja'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <link rel='stylesheet' href='common.css'>
+  <script src='main.js'></script>
+  <title>vuejs学習1</title>
+</head>
+
+<body>
+  <h1>vuejs学習1</h1>
+  <div id="app">
+    <p>{{ msg }}</p>
+  </div>
+  <div id="app2">
+    <ol>
+      <li v-for="item in list">{{ item }}</li>
+    </ol>
+  </div>
+  <div id="app3">
+    <button v-on:click="handleClick">チェックイベント</button>
+  </div>
+  <div id="app4">
+    <p>{{ msg2 }}</p>
+    <input v-model="msg2">
+  </div>
+  <div id="app5">
+    <p v-if="show">v-ifの機能</p>
+  </div>
+  <div id="app6">
+    <transition>
+      <p v-if="show">transition</p>
+    </transition>
+  </div>
+  <div id="app7"></div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</body>
+
+</html>

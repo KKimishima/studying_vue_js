@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='ja'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <script src='main.js'></script>
+  <title>vuejs学習1</title>
+</head>
+
+<body>
+  <h1>vuejs学習1</h1>
+  <div id="app1">
+    <p>{{ msg }}</p>
+    <ul v-for="item in list">
+      <li>{{ item }}</li>
+    </ul>
+    <p>{{ list[num] }}</p>
+    <input type='text' v-bind:value="list">
+  </div>
+  <h2>回数カウント</h2>
+  <div id="app2">
+    <p>{{ count }}回クリックしました</p>
+    <button v-on:click="countOn">カウント回数を増やすよ</button>
+    <button v-on:click="countCrean">カウントクリア</button>
+  </div>
+  <div id="app3">
+    <p v-bind:class="classObject">Test</p>
+    <p v-bind:style="styleObject">test</p>
+  </div>
+  <div id="app4">
+    <img v-bind="imgObject">
+  </div>
+  <div id="app5">
+    <div v-if="ok">v-ifによる描画</div>
+    <div v-else>elseの場合</div>
+    <div v-show="ok">v-showによる描画</div>
+    <template v-if="ok">
+      <p>テンプレートを使った表示</p>
+    </template>
+    <button v-on:click="showOff">表示を消す</button>
+    <button v-on:click="showOn">表示</button>
+  </div>
+  <div id="app6">
+    <ul>
+      <input v-model="name">
+      <button v-on:click="addObject">要素の追加</button>
+
+      <li v-for="item in list" v-bind:key="item.id">
+        ID:{{item.id}},Name:{{item.name}},Sex:{{item.sex}}
+        <span v-if='item.sex === "不明"'>
+          <strong>確認してください!!!</strong>
+        </span>
+        <button v-on:click="removeObject(index)">要素の削除</button>
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</body>
+
+</html>
