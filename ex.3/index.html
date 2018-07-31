@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='ja'>
+
+<head>
+  <meta charset='UTF-8'>
+  <script src='main.js'></script>
+  <title>Vue.js学習3</title>
+</head>
+
+<body>
+  <div id="app1">
+    <p>手動バインディング</p>
+    <input type='text' v-on:value="msg" v-on:change="ch">
+    <p>{{msg}}</p>
+    <div v-on:click.right="handler">example</div>
+    <!-- 右ボタンを押した時のコンテキストメニューを表示させない -->
+    <div v-on:click.right.prevent="handler">example</div>
+    <div v-on:click="handler('div1')">
+      div1
+      <a href="#top" v-on:click.stop="handler('div2')">div2</a>
+    </div>
+  </div>
+  <div id="app2">
+    <label>
+      <input type="checkbox" v-model="val" true-value="yes" false-value="no"> {{ val }}
+    </label>
+  </div>
+  <div id="app3">
+    <p>複数選択</p>
+    <label>
+      <input type='checkbox' v-model="val" value="A">A</label>
+    <label>
+      <input type='checkbox' v-model="val" value="B">B</label>
+    <label>
+      <input type='checkbox' v-model="val" value="C">C</label>
+    <p>{{ val　}}</p>
+  </div>
+  <div id="app4">
+    <p>ラジオボタン</p>
+    <label>
+      <input type='radio' v-model="val" value="A">A</label>
+    <label>
+      <input type='radio' v-model="val" value="B">B</label>
+    <label>
+      <input type='radio' v-model="val" value="C">C</label>
+    <p>{{ val　}}</p>
+  </div>
+  <div id="app5">
+    <p>選択式</p>
+    <select v-model="val">
+      <option value='a'>A</option>
+      <option value='b'>B</option>
+      <option value='c'>C</option>
+    </select>
+    <p>{{ val　}}</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</body>
+
+</html>

@@ -47,16 +47,24 @@
       <input v-model="name">
       <button v-on:click="addObject">要素の追加</button>
 
-      <li v-for="item in list" v-bind:key="item.id">
+      <li v-for="(item, index) in list" v-bind:key="item.id">
         ID:{{item.id}},Name:{{item.name}},Sex:{{item.sex}}
         <span v-if='item.sex === "不明"'>
           <strong>確認してください!!!</strong>
         </span>
         <button v-on:click="removeObject(index)">要素の削除</button>
+        <button v-on:click="chageSex(index)">性別変更</button>
       </li>
     </ul>
   </div>
+  <div id="app7">
+    <h1>ajaxでデータ取得</h1>
+    <ol v-for="item in list" v-bind:key="item.id">
+      <li>id:{{ item.id }},title:{{item.title}}</li>
+    </ol>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js'></script>
 </body>
 
 </html>

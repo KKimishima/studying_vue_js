@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   })
+
   let app5 = new Vue({
     el: "#app5",
     data: {
@@ -60,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   })
+
   let app6 = new Vue({
     el: "#app6",
     data: {
@@ -83,7 +85,35 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       removeObject(index) {
         this.list.splice(index, 1)
+      },
+      chageSex(index) {
+        if (this.list[index].sex === "女性") {
+          this.list[index].sex = "男性"
+        } else {
+          this.list[index].sex = "女性"
+        }
       }
+    }
+  })
+  let app7 = new Vue({
+    el: '#app7',
+    data: {
+      // あらかじめ空リストを用意しておく
+      list: []
+    },
+    created: function () {
+      // let xhr = new XMLHttpRequest();
+      // xhr.addEventListener('load', function () {
+      //   this.list = JSON.parse(xhr.responseText)
+      // })
+      // xhr.open("GET", "http://localhost:3000/todos", true)
+      // xhr.send(null)
+      axios.get('http://localhost:3000/todos').then(function (response) {
+        // 取得完了したらlistリストに代入
+        this.list = response.data
+      }.bind(this)).catch(function (e) {
+        console.error(e)
+      })
     }
   })
 })
