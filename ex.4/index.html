@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='ja'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>Vue.js学習4</title>
+</head>
+
+<body>
+  <h1>Vue.js学習</h1>
+  <div id="app1">
+    <p>{{msg}}</p>
+    <p>{{addWorld}}</p>
+  </div>
+  <div id="app2">
+    <p>横幅: {{wid}}</p>
+    <p>横幅: {{hight}}</p>
+    <p>横幅半分: {{halfWid}}</p>
+    <p>{{halfPoint}}</p>
+  </div>
+  <div id="app3">
+    <h3>絞り込みアプリ</h3>
+    <input type="number" v-model.number="budget"> 以下に絞り込み
+    <input type="number" v-model.munber="limit">　教示件数
+    <p>一致件数:{{mached.length}},表示件数{{limited.length}}</p>
+    <ul v-for="item in limited" v-bind:key="item.id">
+      <li>id:{{item.id}},名前:{{item.name}},金額:{{item.price}}</li>
+    </ul>
+  </div>
+
+  <script src='./axios.min.js'></script>
+  <script src='./vue.js'></script>
+  <script src='./main.js'></script>
+</body>
+
+</html>

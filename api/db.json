@@ -2,11 +2,23 @@
   "todos": [
     {
       "id": 1,
-      "title": "JSON ServerでダミーAPIを作成"
+      "name": "りんご",
+      "price": "100"
     },
     {
       "id": 2,
-      "title": "Vue.jsで基本機能を実装"
+      "name": "バナナ",
+      "price": "200"
+    },
+    {
+      "id": 3,
+      "name": "イチゴ",
+      "price": "130"
+    },
+    {
+      "id": 4,
+      "name": "クリ",
+      "price": "400"
     }
   ]
 }
