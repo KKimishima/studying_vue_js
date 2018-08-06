@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='ja'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>Vue.js学習5</title>
+</head>
+
+<body>
+  <div id="app1">
+    <my-component1></my-component1>
+    <my-component2></my-component2>
+  </div>
+
+  <div id="app2">
+    <!-- <my-component1></my-component1> -->
+    <my-component2></my-component2>
+    <my-component2></my-component2>
+  </div>
+  <div id="app3">
+    <!-- <comp-child></comp-child> -->
+    <comp-child val="これは子A"></comp-child>
+    <comp-child val="これは子B"></comp-child>
+  </div>
+  <script src='./axios.min.js'></script>
+  <script src='./vue.js'></script>
+  <script src='./main.js'></script>
+</body>
+
+</html>

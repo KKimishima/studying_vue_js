@@ -27,7 +27,21 @@
       <li>id:{{item.id}},名前:{{item.name}},金額:{{item.price}}</li>
     </ul>
   </div>
+  <div id="app4">
+    <select v-model="current">
+      <option v-for="topic in topics" v-bind:value="topic.value">
+        {{topic.name}}
+      </option>
+    </select>
+    <div v-for="item in list">
+      {{item.full_name}}
+    </div>
+  </div>
 
+  <div id="app5">
+    <p>{{price}}</p>
+    <p>{{price | localeNum}}</p>
+  </div>
   <script src='./axios.min.js'></script>
   <script src='./vue.js'></script>
   <script src='./main.js'></script>

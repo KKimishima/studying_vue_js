@@ -68,3 +68,39 @@ let app3 = new Vue({
     }
   }
 })
+
+let app4 = new Vue({
+  el: "#app4",
+  data: {
+    list: [],
+    current: '',
+    topics: [
+      { value: "vue", name: "Vue.js" },
+      { value: "react", name: "React.js" }
+    ]
+  },
+  watch: {
+    current: function (val) {
+      // GitHubのAPIからトピックのリポジトリを検索
+      axios.get('https://api.github.com/search/repositories', {
+        params: {
+          q: 'topic:' + val
+        }
+      }).then(function (response) {
+        this.list = response.data.items
+      }.bind(this))
+    }
+  }
+})
+
+let app5 = new Vue({
+  el: "#app5",
+  data: {
+    price: 19800
+  },
+  filters: {
+    localeNum: function (val) {
+      return val.toLocaleString()
+    }
+  }
+})
