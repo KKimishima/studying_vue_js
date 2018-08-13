@@ -18,9 +18,23 @@
     <my-component2></my-component2>
   </div>
   <div id="app3">
+    <my-component3></my-component3>
     <!-- <comp-child></comp-child> -->
     <comp-child val="これは子A"></comp-child>
     <comp-child val="これは子B"></comp-child>
+  </div>
+  <div id="app4">
+    <comp-child2></comp-child2>
+  </div>
+  <div id="app5">
+    <!-- <my-component5></my-component5> -->
+    <ul>
+      <comp-child4 v-for="item in list" v-bind:key="item.id" v-bind:name="item.name" v-bind:hp="item.hp"></comp-child4>
+    </ul>
+  </div>
+  <div id="app6">
+    <myc1></myc1>
+    <!-- <myc1-ch></myc1-ch> -->
   </div>
   <script src='./axios.min.js'></script>
   <script src='./vue.js'></script>

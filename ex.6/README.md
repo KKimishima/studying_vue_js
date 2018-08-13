@@ -1,0 +1,2 @@
+# studying_vue_components
+Vueのwebpackとコンポーネントの設定
